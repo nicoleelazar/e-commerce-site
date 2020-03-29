@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+:root {
+  --c-blue-dark: rgb(0, 44, 58);
+  --c-blue-light: rgb(0, 173, 226);
+  --c-white: rgb(255, 255, 255);
+  --c-grey: slategrey;
+  --c-feature: rgb(252, 217, 18);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--c-grey);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-title {
+  text-transform: uppercase;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-blue {
+  color: var(--c-blue-dark);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-bright {
+  color: var(--c-blue-light);
 }
