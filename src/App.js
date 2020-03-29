@@ -9,7 +9,8 @@ import Default from './components/Default'
 
 function App() {
   return (
-    <React.Fragment>
+    // fragment replaces div that wraps all content
+    <React.Fragment> 
 
       <Navbar></Navbar>
 

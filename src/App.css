@@ -13,6 +13,8 @@ body {
 
 .text-title {
   text-transform: uppercase;
+  font-size: 30px;
+  margin: 5vh auto;
 
 }
 
