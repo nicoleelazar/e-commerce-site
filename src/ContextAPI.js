@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
-import { storeProducts } from "./data";
+import { storeProducts, detailProduct } from "./data";
 
 //'createContext' comes with 2 in-built components, provider & consumer
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
     state = {
-        products: storeProducts,
-        // detailProduct: detailProduct
+        products: [],
+        detailProduct: detailProduct
+    }
+
+    componentDidMount() {
+        this.setProducts();
+    }
+
+    //This is to create a copy of the values from data.js rather than just referencing them
+    setProducts = () => {
+        let tempProducts = [];
+        storeProducts.forEach(item => {
+            const singleItem = {...item};
+            tempProducts = [...tempProducts, singleItem];
+        })
+        this.setState(() => {
+            return {products: tempProducts}
+        })
     }
 
     handleDetail = () => {

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Product from './Product' //Product is the child commponent of ProductList
 import Title from './Title'
-import { storeProducts } from "../data";
+// import { storeProducts } from "../data";
 import { ProductConsumer } from "../ContextAPI";
 
 export default class ProductList extends Component {
-    state = {
-        products: storeProducts
-    };
+    // state = {
+    //     products: storeProducts
+    // };
 
 
 
@@ -22,7 +22,9 @@ export default class ProductList extends Component {
                         <div className="row">
                             <ProductConsumer>
                                 {value => {
-                                    console.log(value)
+                                    return value.products.map(item => {
+                                        return <Product key={item.id} product={item}/>
+                                    })
                                 }}
 
                             </ProductConsumer>
