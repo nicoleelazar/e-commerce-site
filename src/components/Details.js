@@ -42,6 +42,7 @@ export default class Details extends Component {
                                     // the below is a prop you can pass to styled-components
                                     cartColor
                                     // 
+                                    
                                     disabled={inCart ? true : false}
                                     onClick={() => {
                                         item.addToCart(id);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ProductComsumer } from "../ContextAPI";
+import { ProductConsumer } from "../ContextAPI";
 import PropTypes from "prop-types";
 
 export default class Product extends Component {
@@ -12,16 +12,25 @@ export default class Product extends Component {
         return (
             <ProductWrapper className="col-9 col-md-6 col-lg-3 mx-auto my-3">
                 <div className="card">
-                    {/* Card Image & button */}
-                    <div className="image-contain p-5" onClick={() => console.log('you clicked image-contain')}>
-                        <Link to="/details">
-                            <img src={img} alt="product image" className="card-img-top"/>
-                        </Link>
-                        <button className="cart-btn" disabled={inCart ? true : false} onClick={() => console.log("added to the cart")}>
-                            {inCart? (<p className="text-capitalize mb-0" disabled>{" "} In Cart</p>) : <i className="fas fa-cart-arrow-down"/>}
-                        </button>
+
+                    <ProductConsumer>
+                         {/* Card Image & button */}
+                        {value => (
+                            <div className="image-contain p-5" onClick={() => value.handleDetail(id)}>
+                                <Link to="/details">
+                                    <img src={img} alt="product image" className="card-img-top"/>
+                                </Link>
+                                <button className="cart-btn" disabled={inCart ? true : false} onClick={() => value.addToCart(id)}>
+                                    {inCart? (<p className="text-capitalize mb-0" disabled>{" "} In Cart</p>) : <i className="fas fa-cart-arrow-down"/>}
+                                </button>
+                                
+                            </div>  
+                        )}
+
+                       
                         
-                    </div>  
+
+                    </ProductConsumer>
 
                     {/* Card Footer */}
                     <div className="card-footer d-flex flex-row justify-content-between">
