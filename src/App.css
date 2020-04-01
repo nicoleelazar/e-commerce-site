@@ -12,8 +12,7 @@ body {
 }
 
 .text-title {
-  text-transform: uppercase;
-  font-size: 30px;
+  text-transform: capitalize;
   margin: 5vh auto;
 
 }
@@ -24,4 +23,31 @@ body {
 
 .text-bright {
   color: var(--c-blue-light);
+}
+
+.text-feature {
+  color: var(--c-feature);
+
+}
+
+.btn-increment, .btn-increment-count {
+  border: 1px solid var(--c-blue-light);
+  color: var(--c-blue-light);
+  border-radius: 3px;
+  padding: 5px 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-increment:hover {
+  cursor: pointer;
+  color: var(--c-blue-dark);
+  border: 1px solid var(--c-blue-dark);
+  background-color: var(--c-blue-light);
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--c-feature);
 }
